@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.graph-box {
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#canvas {
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.control-panel {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+.control-panel .input-text {
+    margin-bottom: 15px;
+}
+
+.control-panel label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.control-panel input[type="number"],
+.control-panel input[type="checkbox"] {
+    width: calc(100% - 10px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.control-panel button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.control-panel button:hover {
+    background-color: #45a049;
+}
+
+.instructions {
+    max-width: 600px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.instructions .important {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-top: 20px;
+}
+
+.equation-btn {
+    margin-top: 10px;
+    border: 2px solid rgb(59, 88, 255);
+    border-radius: 5px;
+    height: 50px;
+    width: 100%;
+    background-color: #a5f2f5;
+    box-shadow: 5px 3px 3px #777;
+    font-size: 20px;
+}
+
+.equation-btn:hover {
+    border: 2px solid rgb(134, 59, 255);
+    background-color: #1feef5;
+    box-shadow: 10px 6px 6px #777;
+    cursor: pointer;
+}
+
+.in-progress {
+    background-color: #f54040;
+}
+
+.finished {
+    background-color: #39c044;
+}

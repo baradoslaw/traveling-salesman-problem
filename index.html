@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Problem komiwojażera - Projekt</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="graph-box">
+        <canvas id="canvas" width="900" height="600"></canvas>
+    </div>
+    <p><strong>Dystans obecnej trasy:</strong> <span id="distance">-</span></p>
+    <p><strong>Obecna generacja:</strong> <span id="generations-counter">-</span></p>
+    <div class="equation-form">
+        <form class="send-data-form">
+            <input type="submit" class="equation-btn" value="Oblicz najkrótszą trasę"></input>
+            <p class="input-text">
+                <label>
+                  Rozmiar populacji:
+                  <input type="number" id="population-size" value="1000" min="5" max="1000000" required>
+                </label>
+            </p>
+            <p class="input-text">
+                <label>
+                  Liczba iteracji:
+                  <input type="number" id="iterations" value="100" min="5" max="1000000" required>
+                </label>
+            </p>
+            <p class="input-text">
+                <label>
+                  Prawdopodobieństwo mutacji:
+                  <input type="number" id="mutation-rate" value="0.05" min="0" max="1" step="0.01" required>
+                </label>
+            </p>
+            <p class="input-text">
+                <label>
+                  Ilość uczestników w turnieju:
+                  <input type="number" id="tournament-participants" value="5" min="1" max="1000" required>
+                </label>
+            </p>
+            <p class="input-text">
+                <label>
+                  Elitarność:
+                  <input type="checkbox" id="elitism" checked>
+                </label>
+            </p>
+            <fieldset>
+                <p>Wybierz sposób rysowania</p>
+                <p class="input-text">
+                    <label>
+                        Rysuj najlepszą trasę z każdego pokolenia:
+                        <input type="radio" id="draw-every-generation" name="draw-every-generation" value="true" checked required>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Rysuj najlepszą trasę z ostatniego pokolenia:
+                        <input type="radio" id="draw-last-generation" name="draw-every-generation" value="false">
+                    </label>
+                </p>
+            </fieldset>
+        </form>
+    </div>
+    <div class="instructions">
+        <p class="important">Instrukcje:</p>
+        <p>Program służy do obliczania najkrótszej trasy komiwojażera za pomocą algorytmu genetycznego. Proszę dobrać parametry algorytmu:</p>
+            <li><strong>Rozmiar populacji:</strong> Ilość osobników w każdej generacji (iteracji) algorytmu</li>
+            <li><strong>Liczba iteracji:</strong> Ilość generowanych algorytmów</li>
+            <li><strong>Prawdopodobieństwo mutacji:</strong> Szansa na wystąpienie mutacji po stworzeniu potomka, 1 odpowiada 100%, 0,01 to 1%, 0,1 to 10% itd.</li>
+            <li><strong>Ilość uczestników w turnieju:</strong> Algorytm wykorzystuje selekcję turniejową. Zaczyna się on od selekcji wstępnej (algorytm losowo wybiera osobników, aż wybierze ilość podaną w formularzu).
+                Następnie spośród nich wybiera osobnika o najlepszym przystosowaniu - najkrótszej trasie.</li>
+            <li><strong>Elitarność:</strong> Po zaznaczeniu najlepszy osobnik z bieżącego pokolenia znajdzie się również w kolejnym pokoleniu przy każdej iteracji.</li>
+            <li><strong>Sposób rysowania:</strong> Przy rysowaniu trasy z każdego pokolenia pomiędzy kolejnymi iteracjami występuje opóźnienie 100ms, które pozwala
+                przeglądarce zaktualizować mapę i narysować najlepszą trasę w obecnym pokoleniu. Opcja rysowania tylko ostatniego pokolenia jest pozbawiona opóźnień
+                i w związku z tym jest znacznie szybsza.</li>
+        </ul>
+    </div>
+    <footer>
+        <p>Kacper Krański, Radosław Baran</p>
+    </footer>
+    <script type="module" src="js/index.mjs"></script>
+</body>
+</html>
